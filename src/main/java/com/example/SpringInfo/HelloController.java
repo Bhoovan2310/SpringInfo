@@ -15,5 +15,16 @@ public class HelloController {
         return "Hello from BridgeLabz";
     }
 
+    // Use Case 2: GET Request with Query Parameter
+//    Use GET Request Method and pass name as
+//    query parameter
+//- Use CURL to demonstrate the REST API Call
+//- curl localhost:8080/hello/query?name=Mark
+//-w "\n"
+//    http://localhost:8080/hello/query?name=Bhoovan
+    @GetMapping("/query")
+    public String sayHelloWithQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
 
 }
