@@ -57,5 +57,18 @@ public class HelloController {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
 
+    // Use Case 5: PUT Request with Path Variable and Query Parameter
+//    Use PUT Request Method and pass first name as
+//    Path Variable and last name as Query Parameter
+//- Use CURL to demonstrate the REST API Call
+//- curl -X PUT
+//    localhost:8080/hello/put/Mark/?lastName=Taylor-w "\n"
+//    http://localhost:8080/hello/put/Bhoovan?lastName=Kumar
+    @PutMapping("/put/{firstName}")
+    public String sayHelloWithPut(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
+
+
 
 }
