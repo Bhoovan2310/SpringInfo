@@ -38,4 +38,24 @@ public class HelloController {
         return "Hello " + name + " from BridgeLabz";
     }
 
+//     Use Case 4: POST Request with JSON Body
+//Use POST Request Method and pass first name and
+//    last name in the Body
+//- Create User DTO Bean with firstName and lastName as
+//    attributes.
+//- Use CURL to demonstrate the REST API Call
+//- curl -X POST -H "Content-Type: application/json" -d
+//'{"firstName": ”Mark","lastName": ”Taylor"}'
+//        "http://localhost:8080/hello/post" -w "\n"
+//    http://localhost:8080/hello/post
+/*{
+    "firstName" : "Bhoovan",
+        "lastName" : "Kumar"
+}*/
+    @PostMapping("/post")
+    public String sayHelloWithPost(@RequestBody UserDTO user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+    }
+
+    
 }
