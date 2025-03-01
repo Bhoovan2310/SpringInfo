@@ -19,11 +19,22 @@ public class HelloController {
 //    Use GET Request Method and pass name as
 //    query parameter
 //- Use CURL to demonstrate the REST API Call
-//- curl localhost:8080/hello/query?name=Mark
-//-w "\n"
+//- curl localhost:8080/hello/query?name=Mark-w "\n"
 //    http://localhost:8080/hello/query?name=Bhoovan
     @GetMapping("/query")
     public String sayHelloWithQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+
+
+    // Use Case 3: GET Request with Path Variable
+//    Use GET Request Method and pass name as
+//    path variable
+//- Use CURL to demonstrate the REST API Call
+//- curl localhost:8080/hello/param/Mark -w"\n"
+//    http://localhost:8080/hello/param/Anshu_Pathak
+    @GetMapping("/param/{name}")
+    public String sayHelloWithPath(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
 
