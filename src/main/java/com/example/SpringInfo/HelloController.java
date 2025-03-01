@@ -57,5 +57,5 @@ public class HelloController {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
 
-    
+
 }
